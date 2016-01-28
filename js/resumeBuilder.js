@@ -30,7 +30,7 @@ var work = {
 var education = {
     "schools": [
         {
-            "name": "Rossall School",
+            "name": "Rossall School of the student council",
             "location": "Lancashire, England",
             "degree": "IB",
             "majors": ["German", "Biology", "Economics"],
