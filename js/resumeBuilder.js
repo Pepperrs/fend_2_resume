@@ -139,4 +139,4 @@ displayWork();
 projects.display();
 
 
-$("map").append(googleMap);
+$("#mapDiv").append(googleMap);
