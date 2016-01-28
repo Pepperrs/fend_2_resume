@@ -7,11 +7,13 @@ var bio = {
     "role": "Full Stack Developer",
     "contacts": {
         "email": "Peter.schuellermann@gmail.com",
-        "github": "Pepperrs",
+        "github": "http://github.com/pepperrs",
         "twitter": "@aPepperrs",
-        "location": "Berlin, Germany"
+        "location": "Berlin, Germany",
+        "mobile": "0123-123123123",
+        "blog": "http://pepperrs.github.io/portfolio"
     },
-
+    "location": "Berlin, Germany",
     "skills": ["Java", "JavaScript", "Ruby on Rails"],
     "picture": "images/Bewerbungsbild.jpg",
     "welcomeMessage": "Hello World!"
@@ -70,7 +72,21 @@ var projects = {
 };
 
 
+
 bio.display = function () {
+    topContacts = $("#topContacts");
+    footerContacts = $("#footerContacts");
+
+    header.append(HTMLheaderName.replace("%data%", bio.name));
+    header.append(HTMLheaderRole.replace("%data%", bio.role));
+
+    topContacts.append(HTMLmobile.replace("%data%",bio.contacts.mobile));
+    footerContacts.append(HTMLemail.replace("%data%",bio.contacts.email));
+    footerContacts.append(HTMLtwitter.replace("%data%",bio.contacts.twitter));
+    footerContacts.append(HTMLgithub.replace("%data%",bio.contacts.github));
+    topContacts.append(HTMLblog.replace("%data%",bio.contacts.blog));
+    topContacts.append(HTMLlocation.replace("%data%",bio.location));
+
     if (bio.skills.length != 0) {
         header.append(HTMLskillsStart);
         for (skill in bio.skills) {
@@ -81,7 +97,7 @@ bio.display = function () {
     }
 }
 
-work.display = function() {
+work.display = function () {
     for (job in work.jobs) {
         if (work.jobs.hasOwnProperty(job)) {
             $("#workExperience").append(HTMLworkStart);
@@ -121,10 +137,6 @@ projects.display = function () {
     }
 }
 
-
-
-header.append(HTMLheaderName.replace("%data%", bio.name));
-header.append(HTMLheaderRole.replace("%data%", bio.role));
 
 bio.display();
 

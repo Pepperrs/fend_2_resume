@@ -91,6 +91,10 @@ a {
   margin-top: 10px;
   display: block;
 }
+.inline
+{
+  display: inline;
+}
 
 .welcome-message {
   font-style: italic;
