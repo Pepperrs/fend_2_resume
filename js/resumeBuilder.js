@@ -151,5 +151,7 @@ work.display();
 
 projects.display();
 
-
+$(document).click(function (loc) {
+    console.log("pageX: " + loc.pageX + ", pageY: " + loc.pageY);
+});
 $("#mapDiv").append(googleMap);
