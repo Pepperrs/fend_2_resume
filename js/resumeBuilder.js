@@ -69,9 +69,6 @@ var projects = {
     ]
 };
 
-$(document).click(function (loc) {
-    console.log("pageX: " + loc.pageX + ", pageY: " + loc.pageY);
-});
 
 function displayBio() {
     if (bio.skills.length != 0) {
@@ -142,4 +139,4 @@ displayWork();
 projects.display();
 
 
-$("mapDiv").append(googleMap);
+$("map").append(googleMap);
