@@ -71,7 +71,7 @@ var projects = {
     ]
 };
 
-function appendContact(bar) {
+bio.appendContact = function(bar) {
     bar.append(HTMLmobile.replace("%data%", bio.contacts.mobile));
     bar.append(HTMLemail.replace("%data%", bio.contacts.email));
     bar.append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
@@ -80,11 +80,12 @@ function appendContact(bar) {
     bar.append(HTMLlocation.replace("%data%", bio.location));
 }
 
-function appendHeader() {
+bio.appendHeader = function() {
     header.prepend(HTMLheaderRole.replace("%data%", bio.role));
     header.prepend(HTMLheaderName.replace("%data%", bio.name));
 }
-function appendSkills() {
+
+bio.appendSkills = function() {
     if (bio.skills.length != 0) {
         header.append(HTMLskillsStart);
         for (skill in bio.skills) {
@@ -96,11 +97,11 @@ function appendSkills() {
 }
 
 bio.display = function () {
-    appendHeader();
+    bio.appendHeader();
     header.append(HTMLbioPic.replace("%data%", bio.picture));
-    appendContact($("#topContacts"));
-    appendContact($("#footerContacts"));
-    appendSkills();
+    bio.appendContact($("#topContacts"));
+    bio.appendContact($("#footerContacts"));
+    bio.appendSkills();
 }
 
 work.display = function () {
