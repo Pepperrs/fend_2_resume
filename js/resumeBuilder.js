@@ -140,3 +140,6 @@ displayBio();
 displayWork();
 
 projects.display();
+
+
+$("mapDiv").append(googleMap);
