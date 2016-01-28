@@ -84,15 +84,15 @@ p {
   color: #333;
   line-height: 21px;
 }
-.span,
+
 a {
   color: #1199c3;
   text-decoration: none;
   margin-top: 10px;
   display: block;
 }
-.inline
-{
+
+.inline {
   display: inline;
 }
 

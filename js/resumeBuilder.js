@@ -14,8 +14,8 @@ var bio = {
         "blog": "http://pepperrs.github.io/portfolio"
     },
     "location": "Berlin, Germany",
-    "skills": ["Java", "JavaScript", "Ruby on Rails"],
-    "picture": "images/Bewerbungsbild.jpg",
+    "skills": ["Java", "JavaScript", "Ruby on Rails", "HTML", "CSS", "LaTeX", "C++", "AWS", "Linux", "OS X", "Windows"],
+    "picture": "images/fry.jpg",
     "welcomeMessage": "Hello World!"
 };
 
@@ -71,22 +71,20 @@ var projects = {
     ]
 };
 
+function appendContact(bar) {
+    bar.append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+    bar.append(HTMLemail.replace("%data%", bio.contacts.email));
+    bar.append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
+    bar.append(HTMLgithub.replace("%data%", bio.contacts.github));
+    bar.append(HTMLblog.replace("%data%", bio.contacts.blog));
+    bar.append(HTMLlocation.replace("%data%", bio.location));
+}
 
-
-bio.display = function () {
-    topContacts = $("#topContacts");
-    footerContacts = $("#footerContacts");
-
-    header.append(HTMLheaderName.replace("%data%", bio.name));
-    header.append(HTMLheaderRole.replace("%data%", bio.role));
-
-    topContacts.append(HTMLmobile.replace("%data%",bio.contacts.mobile));
-    footerContacts.append(HTMLemail.replace("%data%",bio.contacts.email));
-    footerContacts.append(HTMLtwitter.replace("%data%",bio.contacts.twitter));
-    footerContacts.append(HTMLgithub.replace("%data%",bio.contacts.github));
-    topContacts.append(HTMLblog.replace("%data%",bio.contacts.blog));
-    topContacts.append(HTMLlocation.replace("%data%",bio.location));
-
+function appendHeader() {
+    header.prepend(HTMLheaderRole.replace("%data%", bio.role));
+    header.prepend(HTMLheaderName.replace("%data%", bio.name));
+}
+function appendSkills() {
     if (bio.skills.length != 0) {
         header.append(HTMLskillsStart);
         for (skill in bio.skills) {
@@ -95,6 +93,14 @@ bio.display = function () {
             }
         }
     }
+}
+
+bio.display = function () {
+    appendHeader();
+    header.append(HTMLbioPic.replace("%data%", bio.picture));
+    appendContact($("#topContacts"));
+    appendContact($("#footerContacts"));
+    appendSkills();
 }
 
 work.display = function () {
