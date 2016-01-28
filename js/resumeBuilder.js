@@ -1,5 +1,31 @@
 header = $("#header");
+main = $("#main");
+$(document).click(function(loc) {
+    console.log("pageX: " + loc.pageX + ", pageY: " + loc.pageY);
+});
+function displayWork() {
+    for (job in work.jobs) {
+        if (work.jobs.hasOwnProperty(job)) {
+            $("#workExperience").append(HTMLworkStart);
+            var workentry = $(".work-entry:last");
+            var employer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+            var title = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+            workentry.append(title + employer);
+            var dates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+            workentry.append(dates);
+            var description = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+            workentry.append(description);
+            //var location = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+            //$(".work-entry:last").append(location);
+        }
+    }
 
+}
+
+function inName(name){
+    //TODO: seperate name into two elements and capitalize the second. then merge the elements again and return.
+    return name
+}
 var bio = {
     "name": "Peter Schüllermann",
     "role": "Full Stack Developer",
@@ -20,7 +46,7 @@ var work = {
         {
             "title": "Vice President",
             "employer": "Universität zu Lübeck, student council",
-            "location": "Lübeck",
+            "location": "hier",
             "dates": "Jan. 2015 - Sept. 2015",
             "description": "Vice President of the Student council"
         }
@@ -77,3 +103,6 @@ if (bio.skills.length != 0) {
     }
 }
 
+displayWork();
+
+main.append(internationalizeButton);
