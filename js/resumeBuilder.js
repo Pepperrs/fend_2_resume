@@ -78,12 +78,12 @@ bio.appendContact = function(bar) {
     bar.append(HTMLgithub.replace("%data%", bio.contacts.github));
     bar.append(HTMLblog.replace("%data%", bio.contacts.blog));
     bar.append(HTMLlocation.replace("%data%", bio.location));
-}
+};
 
 bio.appendHeader = function() {
     header.prepend(HTMLheaderRole.replace("%data%", bio.role));
     header.prepend(HTMLheaderName.replace("%data%", bio.name));
-}
+};
 
 bio.appendSkills = function() {
     if (bio.skills.length != 0) {
@@ -94,7 +94,7 @@ bio.appendSkills = function() {
             }
         }
     }
-}
+};
 
 bio.display = function () {
     bio.appendHeader();
@@ -102,7 +102,7 @@ bio.display = function () {
     bio.appendContact($("#topContacts"));
     bio.appendContact($("#footerContacts"));
     bio.appendSkills();
-}
+};
 
 work.display = function () {
     for (job in work.jobs) {
@@ -121,7 +121,7 @@ work.display = function () {
         }
     }
 
-}
+};
 
 projects.display = function () {
     for (project in projects.projects) {
@@ -142,7 +142,7 @@ projects.display = function () {
             }
         }
     }
-}
+};
 
 
 bio.display();
