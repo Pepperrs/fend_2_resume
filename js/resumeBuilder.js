@@ -1,8 +1,21 @@
 header = $("#header");
 main = $("#main");
-$(document).click(function(loc) {
+
+$(document).click(function (loc) {
     console.log("pageX: " + loc.pageX + ", pageY: " + loc.pageY);
 });
+
+function displayBio() {
+    if (bio.skills.length != 0) {
+        header.append(HTMLskillsStart);
+        for (skill in bio.skills) {
+            if (bio.skills.hasOwnProperty(skill)) {
+                $("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
+            }
+        }
+    }
+}
+
 function displayWork() {
     for (job in work.jobs) {
         if (work.jobs.hasOwnProperty(job)) {
@@ -22,13 +35,16 @@ function displayWork() {
 
 }
 
-function inName(name){
+function displayProjects() {
+
+}
+
+function inName(name) {
     name = name.trim().split(" ");
-    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
     name[1] = name[1].toUpperCase();
     return name.join(" ")
 }
-
 
 
 var bio = {
@@ -101,13 +117,7 @@ var projects = {
 header.append(HTMLheaderName.replace("%data%", bio.name));
 header.append(HTMLheaderRole.replace("%data%", bio.role));
 
-if (bio.skills.length != 0) {
-    header.append(HTMLskillsStart);
-    for (skill in bio.skills) {
-        $("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
-    }
-}
+displayBio();
 
 displayWork();
 
-main.append(internationalizeButton);
