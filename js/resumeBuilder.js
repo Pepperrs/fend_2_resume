@@ -54,7 +54,7 @@ var education = {
         {
             "title": "Front End Nano Degree",
             "school": "Udacity",
-            "dates": "Jan. 2016 - Now",
+            "date": "Jan. 2016",
             "url": "www.udacity.com"
         }
     ]
@@ -163,8 +163,6 @@ education.display = function () {
                     schoolEntry.append(majorInsert);
                 }
             }
-
-
         }
     }
 
