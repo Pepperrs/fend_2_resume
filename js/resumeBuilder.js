@@ -21,7 +21,7 @@ var work = {
             "title": "Vice President",
             "employer": "Universität zu Lübeck, student council",
             "location": "Lübeck",
-            "yearsWorked": 1,
+            "dates": "Jan. 2015 - Sept. 2015",
             "description": "Vice President of the Student council"
         }
     ]
@@ -34,7 +34,7 @@ var education = {
             "location": "Lancashire, England",
             "degree": "IB",
             "majors": ["German", "Biology", "Economics"],
-            "dates": 2,
+            "dates": "2007 - 2009",
             "url": "www.rossall.co.uk"
         },
         {
@@ -42,7 +42,7 @@ var education = {
             "location": "Lübeck, Germany",
             "degree": "Bachelor of Science",
             "majors": ["Computer Science"],
-            "dates": 5,
+            "dates": "2010-2015",
             "url": "www.uni-luebeck.de"
         }
     ],
@@ -50,7 +50,7 @@ var education = {
         {
             "title": "Front End Nano Degree",
             "school": "Udacity",
-            "dates": "2",
+            "dates": "Jan. 2016 - Now",
             "url": "www.udacity.com"
         }
     ]
@@ -67,15 +67,13 @@ var projects = {
     ]
 };
 
-var formattedName = HTMLheaderName.replace("%data%", "Peter Schüllermann");
-var formattedRole = HTMLheaderRole.replace("%data%", "Full Stack Developer");
-
-header.append(formattedName);
-header.append(formattedRole);
+header.append(HTMLheaderName.replace("%data%", bio.name));
+header.append(HTMLheaderRole.replace("%data%", bio.role));
 
 if (bio.skills.length != 0) {
     header.append(HTMLskillsStart);
-    for (var skill in bio.skills) {
+    for (skill in bio.skills) {
         $("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
     }
 }
+
