@@ -70,7 +70,7 @@ var projects = {
 };
 
 
-function displayBio() {
+bio.display = function () {
     if (bio.skills.length != 0) {
         header.append(HTMLskillsStart);
         for (skill in bio.skills) {
@@ -81,7 +81,7 @@ function displayBio() {
     }
 }
 
-function displayWork() {
+work.display = function() {
     for (job in work.jobs) {
         if (work.jobs.hasOwnProperty(job)) {
             $("#workExperience").append(HTMLworkStart);
