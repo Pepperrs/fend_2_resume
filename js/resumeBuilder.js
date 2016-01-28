@@ -23,9 +23,14 @@ function displayWork() {
 }
 
 function inName(name){
-    //TODO: seperate name into two elements and capitalize the second. then merge the elements again and return.
-    return name
+    name = name.trim().split(" ");
+    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+    name[1] = name[1].toUpperCase();
+    return name.join(" ")
 }
+
+
+
 var bio = {
     "name": "Peter Schüllermann",
     "role": "Full Stack Developer",
