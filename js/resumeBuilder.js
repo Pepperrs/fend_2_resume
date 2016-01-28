@@ -34,7 +34,7 @@ var work = {
 var education = {
     "schools": [
         {
-            "name": "Rossall School of the student council",
+            "name": "Rossall School",
             "location": "Lancashire, England",
             "degree": "IB",
             "majors": ["German", "Biology", "Economics"],
@@ -144,6 +144,39 @@ projects.display = function () {
     }
 };
 
+education.display = function () {
+    for (school in education.schools) {
+        if (education.schools.hasOwnProperty(school)) {
+            $("#education").append(HTMLschoolStart);
+            var schoolEntry = $(".education-entry:last");
+            var name = HTMLschoolName.replace("%data%", education.schools[school].name);
+            var degree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+            var location = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+            var dates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+            schoolEntry.append(name + degree);
+            schoolEntry.append(location);
+            schoolEntry.append(dates);
+
+            if (education.schools[school].majors.length > 0) {
+                for (major in education.schools[school].majors) {
+                    var majorInsert = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
+                    schoolEntry.append(majorInsert);
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+
+};
 
 bio.display();
 
@@ -151,7 +184,9 @@ work.display();
 
 projects.display();
 
+education.display();
 $(document).click(function (loc) {
     console.log("pageX: " + loc.pageX + ", pageY: " + loc.pageY);
 });
+
 $("#mapDiv").append(googleMap);
