@@ -1,5 +1,5 @@
-header = $("#header");
-main = $("#main");
+$header = $("#header");
+$main = $("#main");
 
 
 var bio = {
@@ -15,7 +15,7 @@ var bio = {
     },
     "location": "Berlin, Germany",
     "skills": ["Java", "JavaScript", "Ruby on Rails", "HTML", "CSS", "LaTeX", "C++", "AWS", "Linux", "OS X", "Windows"],
-    "picture": "images/fry.jpg",
+    "biopic": "images/fry.jpg",
     "welcomeMessage": "Hello World!"
 };
 
@@ -71,7 +71,7 @@ var projects = {
     ]
 };
 
-bio.appendContact = function(bar) {
+bio.appendContact = function (bar) {
     bar.append(HTMLmobile.replace("%data%", bio.contacts.mobile));
     bar.append(HTMLemail.replace("%data%", bio.contacts.email));
     bar.append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
@@ -80,14 +80,14 @@ bio.appendContact = function(bar) {
     bar.append(HTMLlocation.replace("%data%", bio.location));
 };
 
-bio.appendHeader = function() {
-    header.prepend(HTMLheaderRole.replace("%data%", bio.role));
-    header.prepend(HTMLheaderName.replace("%data%", bio.name));
+bio.appendHeader = function () {
+    $header.prepend(HTMLheaderRole.replace("%data%", bio.role));
+    $header.prepend(HTMLheaderName.replace("%data%", bio.name));
 };
 
-bio.appendSkills = function() {
+bio.appendSkills = function () {
     if (bio.skills.length != 0) {
-        header.append(HTMLskillsStart);
+        $header.append(HTMLskillsStart);
         for (skill in bio.skills) {
             if (bio.skills.hasOwnProperty(skill)) {
                 $("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
@@ -98,7 +98,7 @@ bio.appendSkills = function() {
 
 bio.display = function () {
     bio.appendHeader();
-    header.append(HTMLbioPic.replace("%data%", bio.picture));
+    $header.append(HTMLbioPic.replace("%data%", bio.biopic));
     bio.appendContact($("#topContacts"));
     bio.appendContact($("#footerContacts"));
     bio.appendSkills();
@@ -163,14 +163,6 @@ education.display = function () {
                     schoolEntry.append(majorInsert);
                 }
             }
-
-
-
-
-
-
-
-
 
 
         }
