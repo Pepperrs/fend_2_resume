@@ -114,8 +114,12 @@ projects.display = function () {
             projectEntry.append(dates);
             var description = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
             projectEntry.append(description);
-            var images = HTMLprojectImage.replace("%data%", projects.projects[project].images);
-            projectEntry.append(images);
+            if (projects.projects[project].images.length > 0) {
+                for (image in projects.projects[project].images) {
+                    var images = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+                    projectEntry.append(images);
+                }
+            }
         }
     }
 }
