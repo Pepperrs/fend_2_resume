@@ -126,9 +126,9 @@ projects.display = function () {
 header.append(HTMLheaderName.replace("%data%", bio.name));
 header.append(HTMLheaderRole.replace("%data%", bio.role));
 
-displayBio();
+bio.display();
 
-displayWork();
+work.display();
 
 projects.display();
 
