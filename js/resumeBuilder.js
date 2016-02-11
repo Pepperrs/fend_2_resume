@@ -15,7 +15,7 @@ var bio = {
     },
     "location": "Berlin, Germany",
     "skills": ["Java", "JavaScript", "Ruby on Rails", "HTML", "CSS", "LaTeX", "C++", "AWS", "Linux", "OS X", "Windows"],
-    "biopic": "images/Bewerbungsbild.jpg",
+    "biopic": "images/fry.jpg",
     "welcomeMessage": "Hello World!"
 };
 
@@ -24,7 +24,7 @@ var work = {
         {
             "title": "Vice President",
             "employer": "Universität zu Lübeck, student council",
-            "location": "hier",
+            "location": "Lübeck, Germany",
             "dates": "Jan. 2015 - Sept. 2015",
             "description": "Vice President of the Student council"
         }
@@ -34,20 +34,20 @@ var work = {
 var education = {
     "schools": [
         {
-            "name": "Rossall School",
-            "location": "Lancashire, England",
-            "degree": "IB",
-            "majors": ["German", "Biology", "Economics"],
-            "dates": "2007 - 2009",
-            "url": "www.rossall.co.uk"
-        },
-        {
             "name": "Universität zu Lübeck",
             "location": "Lübeck, Germany",
             "degree": "Bachelor of Science",
             "majors": ["Computer Science"],
             "dates": "2010-2015",
             "url": "www.uni-luebeck.de"
+        },
+        {
+            "name": "Rossall School",
+            "location": "Lancashire, England",
+            "degree": "IB",
+            "majors": ["German", "Biology", "Economics"],
+            "dates": "2007 - 2009",
+            "url": "www.rossall.co.uk"
         }
     ],
     "onlineCourses": [

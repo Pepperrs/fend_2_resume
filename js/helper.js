@@ -124,7 +124,7 @@ function initializeMap() {
 
         // initializes an empty array
         var locations = [];
-
+        locations.push("Dreieich, Germany");
         // adds the single location property from bio to the locations array
         locations.push(bio.contacts.location);
 
