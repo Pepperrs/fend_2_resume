@@ -15,7 +15,7 @@ var bio = {
     },
     "location": "Berlin, Germany",
     "skills": ["Java", "JavaScript", "Ruby on Rails", "HTML", "CSS", "LaTeX", "C++", "AWS", "Linux", "OS X", "Windows"],
-    "biopic": "images/fry.jpg",
+    "biopic": "images/Bewerbungsbild.jpg",
     "welcomeMessage": "Hello World!"
 };
 
